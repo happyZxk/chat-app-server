@@ -32,7 +32,10 @@ export class ChatGPTService {
         max_tokens: request.max_tokens,
       });
 
-      return response.choices[0]?.message?.content || 'No response';
+      return (
+        response.choices[0]?.message?.content ||
+        '机器人睡着了一会再提问吧！！！'
+      );
     } catch (error) {
       console.error(error);
       return '机器人睡着了一会再提问吧！！！';
